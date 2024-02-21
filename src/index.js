@@ -76,6 +76,10 @@ function verificarPalavra(palavraDigitada) {
 
 function lerPalavra() {
     leitor.question('Digite a palavra: ', (resposta) => {
+        if(resposta.length != 5) {
+            console.log('informe uma palavra com 5 letras')
+            return lerPalavra()
+        }
         verificarPalavra(resposta)
         lerPalavra()
     });
